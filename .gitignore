@@ -1,0 +1,14 @@
+# Zig build output (default build directory)
+.zig-cache/
+zig-out/
+test_data/
+
+# Visual Studio files
+.vs/
+*.vcxproj.user
+*.dbmdl
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
