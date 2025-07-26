@@ -14,10 +14,7 @@ pub fn main() !void {
     const fileContent = try std.fs.cwd().readFileAlloc(allocator, "test_data/simple.ifc", file_size);
     defer allocator.free(fileContent);
 
-    var lexer = lexer_module.Lexer{
-        .buffer = fileContent,
-        .position = 0,
-    };
+    var lexer = lexer_module.Lexer.init(fileContent);
 
     std.log.info("------ Starting Parser ------", .{});
     var entities = try parser_module.Parser.parse(&lexer, allocator);
